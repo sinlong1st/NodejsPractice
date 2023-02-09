@@ -1,5 +1,5 @@
 # NodejsPractice
-A crash Node practice module for interviewing for MEAR Stack Developer.
+A crash Node practice module for interviewing for MERN Stack Developer.
 Including:
 + Installation, Cmd to run Node
 + Global object (instead of window object in Javascript, in NodeJS is global object)
