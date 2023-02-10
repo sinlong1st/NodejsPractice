@@ -1,4 +1,4 @@
-# NodejsPractice
+# NodejsPractice with common modules
 A crash Node practice module for interviewing for MERN Stack Developer.
 Including:
 + Installation, Cmd to run Node
