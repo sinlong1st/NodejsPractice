@@ -35,21 +35,40 @@
 // });
 
 // Events module
-const EventEmitter = require("events");
-// const emitter = new EventEmitter();
-// Simple Explanation Steps:
-// Sign up for an event and then call it and it will do "something"
-// Something here is a function that you define to do whatever you want
-// The function should be define and assign to the 2nd parameter of the method to sign up for an event
-// Let's do an example...
+// const EventEmitter = require("events");
+// // const emitter = new EventEmitter();
+// // Simple Explanation Steps:
+// // Sign up for an event and then call it and it will do "something"
+// // Something here is a function that you define to do whatever you want
+// // The function should be define and assign to the 2nd parameter of the method to sign up for an event
+// // Let's do an example...
 
-const Logger = require("./logger");
-const logger = new Logger();
-// Register a listener
-logger.on("messageLogged", (arg) => {
-  console.log("Listener called!!!", arg);
+// const Logger = require("./logger");
+// const logger = new Logger();
+// // Register a listener
+// logger.on("messageLogged", (arg) => {
+//   console.log("Listener called!!!", arg);
+// });
+// logger.log("message");
+// // Raise an event, you can also add para for the function
+// // emitter.emit("messageLogged", { id: 1, url: "/" }); // Call it and it will do the function you defined
+// // Raise: logging (data: message)
+
+const http = require("http");
+const server = http.createServer((request, res) => {
+  if (request.url === "/") {
+    res.write("Welcome to the Home Page");
+    res.end();
+  }
+  if (request.url === "/api/courses") {
+    res.write(JSON.stringify([1, 2, 3]));
+    res.end();
+  }
 });
-logger.log("message");
-// Raise an event, you can also add para for the function
-// emitter.emit("messageLogged", { id: 1, url: "/" }); // Call it and it will do the function you defined
-// Raise: logging (data: message)
+
+server.on("connection", (socket) => {
+  console.log("New connection");
+});
+
+server.listen(5000);
+console.log("Listening on port 5000...");
