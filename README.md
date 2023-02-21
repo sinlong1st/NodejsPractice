@@ -11,5 +11,7 @@ Including:
 + Events module
 + Events Emitter
 + HTTP module
-In package.json, put this in the "scripts" object: "devStart": "nodemon server.js" (server.js is the Server file we are coding on, change it depends on your server file name)
-npm run devStart => run all the code in the server.js and when ever you modify the file, it would automatically reload it => save lots of time
+Install nodemon: 
++ npm i nodemon
++ In package.json, put this in the "scripts" object: "devStart": "nodemon server.js" (server.js is the Server file we are coding on, change it depends on your server file name)
++ npm run devStart => run all the code in the server.js and when ever you modify the file, it would automatically reload it => save lots of time
